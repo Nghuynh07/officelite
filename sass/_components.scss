@@ -1,0 +1,41 @@
+@use "variables" as *;
+@use "bases" as *;
+@use "mixins" as *;
+
+.btn {
+  @include font($reg-font, $white, 600);
+  padding: 12px 40px;
+  text-transform: capitalize;
+  border-radius: 5rem;
+
+  &--header {
+    box-shadow: 0 8px 25px rgba($primary-blue / 0.4);
+    background-color: $primary-blue;
+    margin: auto;
+  }
+
+  &--free,
+  &--ultimate {
+    background-color: rgba(#5175ff, 0.15);
+    color: $primary-blue;
+    margin: auto;
+  }
+
+  &--pro {
+    background-color: $white;
+    color: $primary-blue;
+    margin: auto;
+  }
+
+  &--timer {
+    background-color: $primary-blue;
+    margin: auto;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &--header {
+      margin: 0;
+      max-width: fit-content;
+    }
+  }
+}

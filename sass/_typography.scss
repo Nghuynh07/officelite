@@ -1,0 +1,102 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.header {
+  &__heading {
+    @include font($xlg-font, $primary-dark, 600);
+    line-height: 1.3;
+  }
+  &__text {
+    @include font($reg-font, $primary-gray, none);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &__heading {
+      line-height: 1.1;
+    }
+  }
+
+  @media (min-width: 1035px) {
+    &__heading {
+      font-size: $heading-font;
+    }
+    &__text {
+      line-height: 1.6;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.main {
+}
+
+.card {
+  &__plan {
+    text-transform: capitalize;
+    &--basic,
+    &--ultimate {
+      color: $primary-dark;
+    }
+    &--pro {
+      color: $white;
+    }
+  }
+
+  &__price {
+    text-transform: capitalize;
+    font-size: $xxlg-font;
+    &--basic,
+    &--ultimate {
+      color: $primary-dark;
+    }
+    &--pro {
+      color: $white;
+    }
+  }
+
+  &__monthly {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    &--basic,
+    &--ultimate {
+      color: $primary-dark;
+    }
+    &--pro {
+      color: $white;
+    }
+  }
+
+  &__text {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+    &--basic,
+    &--ultimate {
+      color: $primary-gray;
+    }
+    &--pro {
+      color: $white;
+      opacity: 0.75;
+    }
+  }
+}
+
+.timer {
+  &__when {
+    @include font($reg-font, $white, 600);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    span {
+      color: $primary-blue;
+    }
+  }
+  &__numbers {
+    @include font(calc(36rem / 16), $white, 600);
+  }
+
+  &__text {
+    @include font(calc(12rem / 16), $primary-gray, regular);
+  }
+}

@@ -1,0 +1,46 @@
+@use "variables" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+html {
+  --primary-blue: #5175ff;
+  --primary-dark: #333950;
+  --primary-gray: #747b95;
+
+  --secondary-blue: #829cff;
+  --secondary-dark: #25293a;
+  --secondary-pinkish-red: #f05b5b;
+
+  --56px: 3.5rem;
+  --40px: 2.5rem;
+  --32px: 2rem;
+  --20px: 1.25rem;
+  --16px: 1rem;
+
+  --desktop-side-padding: 165px;
+  --tablet-side-padding: 39px;
+  --mobile-side-padding: 24px;
+
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+}
+
+body {
+  padding: 0 calc((100% - 1440px) / 2);
+  background-color: $white;
+}

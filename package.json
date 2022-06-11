@@ -1,0 +1,15 @@
+{
+  "name": "officelite",
+  "version": "1.0.0",
+  "description": "![Design preview for the Officelite coming soon site coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --source-map --watch sass:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.52.3"
+  }
+}

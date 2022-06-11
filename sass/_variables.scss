@@ -1,0 +1,24 @@
+$primary-blue: var(--primary-blue);
+$primary-dark: var(--primary-dark);
+$primary-gray: var(--primary-gray);
+
+$secondary-blue: var(--secondary-blue);
+$secondary-dark: var(--secondary-dark);
+$secondary-pinkish-red: var(--secondary-pinkish-red);
+
+$white: #fafafa;
+
+$reg-font: var(--16px);
+$med-font: var(--20px);
+$lg-font: var(--32px);
+$xlg-font: var(--40px);
+$xxlg-font: var(--56px);
+
+$desktop-side-padding: var(--desktop-side-padding);
+$tablet-side-padding: var(--tablet-side-padding);
+$mobile-side-padding: var(--mobile-side-padding);
+
+$heading-font: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
+
+$breakpoint-tablet: 48rem;
+$breakpoint-desktop: 90rem;
