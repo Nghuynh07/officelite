@@ -40,6 +40,8 @@
     &--pro {
       color: $white;
     }
+    @media (min-width: 48rem) {
+    }
   }
 
   &__price {
@@ -98,5 +100,14 @@
 
   &__text {
     @include font(calc(12rem / 16), $primary-gray, regular);
+  }
+  @media (min-width: 64.6875rem) {
+    &__when {
+      grid-column: 1 / -1;
+    }
+    &__numbers {
+      grid-column: 1 / 2;
+      grid-row: 2/3;
+    }
   }
 }

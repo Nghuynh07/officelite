@@ -6,10 +6,10 @@
     padding: 40px 0;
     display: grid;
     row-gap: 35px;
-    // background-image: url("../assets/home/bg-pattern-header.svg");
-    // background-repeat: no-repeat;
-    // background-position: 0 -38%;
-    // background-size: contain;
+    background-image: url("../assets/home/bg-pattern-header.svg");
+    background-repeat: no-repeat;
+    background-position: 0 -38%;
+    background-size: contain;
   }
 
   &__logo {
@@ -22,7 +22,7 @@
     margin-left: auto;
     margin-right: auto;
     img {
-      max-width: 171px;
+      max-width: calc(171rem / 16);
       transform: translateY(25px);
     }
   }
@@ -35,6 +35,7 @@
   }
 
   @media (min-width: $breakpoint-tablet) {
+    //768px
     &__container {
       padding: 60px $tablet-side-padding;
       grid-template-columns: repeat(8, 1fr);
@@ -53,7 +54,7 @@
       justify-self: end;
       display: grid;
       img {
-        max-width: 281px;
+        max-width: calc(281rem / 16);
         transform: translateY(40px);
       }
     }
@@ -65,20 +66,23 @@
       padding: 0;
     }
   }
-  @media (min-width: 1035px) {
+  @media (min-width: 64.6875rem) {
+    //1035px
     &__contents {
-      max-width: 540px;
+      max-width: 35rem;
       align-content: center;
+      justify-content: start;
     }
 
     &__img {
       img {
-        max-width: 475px;
+        max-width: 29.6875rem;
       }
     }
   }
 
-  @media (min-width: 1287px) {
+  @media (min-width: 80.4375rem) {
+    //1287px
     &__container {
       padding-left: $desktop-side-padding;
       padding-right: $desktop-side-padding;
@@ -90,7 +94,6 @@
   margin-top: 2.5rem;
   &__container {
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -98,9 +101,18 @@
     display: grid;
     row-gap: 30px;
     padding: 0 $mobile-side-padding;
-    z-index: 1;
+    isolation: isolate;
     grid-row: 1 / 3;
     grid-column: 1 / -1;
+    @media (min-width: 64.6875rem) {
+      grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+      row-gap: 0;
+      column-gap: 30px;
+    }
+    @media (min-width: 80.4375rem) {
+      padding-left: $desktop-side-padding;
+      padding-right: $desktop-side-padding;
+    }
   }
 
   &__bottom {
@@ -125,12 +137,37 @@
   }
   &--pro {
     background-color: $primary-blue;
+    background-image: url("../assets/home/bg-pattern-pricing.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    @media (min-width: 48rem) {
+      background-position: 200%;
+    }
+    @media (min-width: 64.6875rem) {
+      background-position: 50% 80%;
+    }
   }
 
   &__infos {
     display: grid;
     row-gap: 15px;
     margin-top: 15px;
+  }
+  @media (min-width: 48rem) {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    padding: 45px;
+    row-gap: 0;
+    &__plan {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (min-width: 64.6875rem) {
+    grid-template-columns: 1fr;
+    padding: 45px 0;
+    text-align: center;
+    // transform: translateY(-30px);
+    row-gap: 30px;
   }
 }
 
@@ -139,11 +176,15 @@
   display: grid;
   row-gap: 40px;
   padding: 560px $mobile-side-padding 100px $mobile-side-padding;
+  background-image: url("../assets/home/bg-pattern-footer.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   &__countdown {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
   }
 
   &__time {
@@ -153,5 +194,26 @@
     padding: 8px 15px;
     background-color: #333950;
     border-radius: 5px;
+    max-width: 100px;
+  }
+  @media (min-width: 48rem) {
+    // background-position: top;
+    // background-position: 50% 30%;
+    // background-size: 170%;
+  }
+  @media (min-width: 64.6875rem) {
+    padding: 300px $mobile-side-padding 50px $mobile-side-padding;
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+    &__countdown {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  }
+  @media (min-width: 80.4375rem) {
+    padding-left: $desktop-side-padding;
+    padding-right: $desktop-side-padding;
   }
 }

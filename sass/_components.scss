@@ -30,12 +30,31 @@
   &--timer {
     background-color: $primary-blue;
     margin: auto;
+    @media (min-width: 64.6875rem) {
+      margin: 0;
+      justify-self: end;
+      align-self: start;
+    }
   }
 
   @media (min-width: $breakpoint-tablet) {
     &--header {
       margin: 0;
       max-width: fit-content;
+    }
+    &--free,
+    &--ultimate,
+    &--pro {
+      margin: 0;
+      max-width: fit-content;
+      margin-top: 20px;
+    }
+  }
+  @media (min-width: 64.6875rem) {
+    &--free,
+    &--ultimate,
+    &--pro {
+      margin: auto;
     }
   }
 }

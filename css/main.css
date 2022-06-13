@@ -3,6 +3,10 @@
   padding: 40px 0;
   display: grid;
   row-gap: 35px;
+  background-image: url("../assets/home/bg-pattern-header.svg");
+  background-repeat: no-repeat;
+  background-position: 0 -38%;
+  background-size: contain;
 }
 .header__logo {
   margin: auto;
@@ -12,7 +16,7 @@
   margin-right: auto;
 }
 .header__img img {
-  max-width: 171px;
+  max-width: 10.6875rem;
   transform: translateY(25px);
 }
 .header__contents {
@@ -39,7 +43,7 @@
     display: grid;
   }
   .header__img img {
-    max-width: 281px;
+    max-width: 17.5625rem;
     transform: translateY(40px);
   }
   .header__contents {
@@ -49,16 +53,17 @@
     padding: 0;
   }
 }
-@media (min-width: 1035px) {
+@media (min-width: 64.6875rem) {
   .header__contents {
-    max-width: 540px;
+    max-width: 35rem;
     align-content: center;
+    justify-content: start;
   }
   .header__img img {
-    max-width: 475px;
+    max-width: 29.6875rem;
   }
 }
-@media (min-width: 1287px) {
+@media (min-width: 80.4375rem) {
   .header__container {
     padding-left: var(--desktop-side-padding);
     padding-right: var(--desktop-side-padding);
@@ -70,16 +75,28 @@
 }
 .main__container {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-columns: repeat(3, 1fr);
 }
 .main__top {
   display: grid;
   row-gap: 30px;
   padding: 0 var(--mobile-side-padding);
-  z-index: 1;
+  isolation: isolate;
   grid-row: 1/3;
   grid-column: 1/-1;
+}
+@media (min-width: 64.6875rem) {
+  .main__top {
+    grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+    row-gap: 0;
+    column-gap: 30px;
+  }
+}
+@media (min-width: 80.4375rem) {
+  .main__top {
+    padding-left: var(--desktop-side-padding);
+    padding-right: var(--desktop-side-padding);
+  }
 }
 .main__bottom {
   background-color: #25293a;
@@ -102,11 +119,43 @@
 }
 .card--pro {
   background-color: var(--primary-blue);
+  background-image: url("../assets/home/bg-pattern-pricing.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+@media (min-width: 48rem) {
+  .card--pro {
+    background-position: 200%;
+  }
+}
+@media (min-width: 64.6875rem) {
+  .card--pro {
+    background-position: 50% 80%;
+  }
 }
 .card__infos {
   display: grid;
   row-gap: 15px;
   margin-top: 15px;
+}
+@media (min-width: 48rem) {
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    padding: 45px;
+    row-gap: 0;
+  }
+  .card__plan {
+    grid-column: 1/-1;
+  }
+}
+@media (min-width: 64.6875rem) {
+  .card {
+    grid-template-columns: 1fr;
+    padding: 45px 0;
+    text-align: center;
+    row-gap: 30px;
+  }
 }
 
 .timer {
@@ -114,11 +163,15 @@
   display: grid;
   row-gap: 40px;
   padding: 560px var(--mobile-side-padding) 100px var(--mobile-side-padding);
+  background-image: url("../assets/home/bg-pattern-footer.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .timer__countdown {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 .timer__time {
   display: grid;
@@ -127,6 +180,26 @@
   padding: 8px 15px;
   background-color: #333950;
   border-radius: 5px;
+  max-width: 100px;
+}
+@media (min-width: 64.6875rem) {
+  .timer {
+    padding: 300px var(--mobile-side-padding) 50px var(--mobile-side-padding);
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+  }
+  .timer__countdown {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
+@media (min-width: 80.4375rem) {
+  .timer {
+    padding-left: var(--desktop-side-padding);
+    padding-right: var(--desktop-side-padding);
+  }
 }
 
 *,
@@ -254,6 +327,15 @@ body {
   color: var(--primary-gray);
   font-weight: regular;
 }
+@media (min-width: 64.6875rem) {
+  .timer__when {
+    grid-column: 1/-1;
+  }
+  .timer__numbers {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
 
 .btn {
   font-size: var(--16px);
@@ -282,10 +364,27 @@ body {
   background-color: var(--primary-blue);
   margin: auto;
 }
+@media (min-width: 64.6875rem) {
+  .btn--timer {
+    margin: 0;
+    justify-self: end;
+    align-self: start;
+  }
+}
 @media (min-width: 48rem) {
   .btn--header {
     margin: 0;
     max-width: fit-content;
+  }
+  .btn--free, .btn--ultimate, .btn--pro {
+    margin: 0;
+    max-width: fit-content;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 64.6875rem) {
+  .btn--free, .btn--ultimate, .btn--pro {
+    margin: auto;
   }
 }
 
