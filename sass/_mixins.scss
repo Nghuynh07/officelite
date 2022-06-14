@@ -3,3 +3,9 @@
   color: $color;
   font-weight: $weight;
 }
+
+@mixin breakPoint($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

@@ -12,6 +12,10 @@
     box-shadow: 0 8px 25px rgba($primary-blue / 0.4);
     background-color: $primary-blue;
     margin: auto;
+    @include breakPoint($breakpoint-tablet) {
+      margin: 0;
+      max-width: fit-content;
+    }
   }
 
   &--free,
@@ -19,42 +23,42 @@
     background-color: rgba(#5175ff, 0.15);
     color: $primary-blue;
     margin: auto;
+    @include breakPoint($breakpoint-tablet) {
+      margin: 0;
+      max-width: fit-content;
+      margin-top: 20px;
+    }
+    @include breakPoint(64.6875rem) {
+      margin: auto;
+    }
   }
 
   &--pro {
     background-color: $white;
     color: $primary-blue;
     margin: auto;
+    @include breakPoint($breakpoint-tablet) {
+      margin: 0;
+      max-width: fit-content;
+      margin-top: 20px;
+    }
+    @include breakPoint(64.6875rem) {
+      margin: auto;
+    }
   }
 
   &--timer {
     background-color: $primary-blue;
     margin: auto;
-    @media (min-width: 64.6875rem) {
+    @include breakPoint(64.6875rem) {
       margin: 0;
       justify-self: end;
       align-self: start;
     }
   }
-
-  @media (min-width: $breakpoint-tablet) {
-    &--header {
-      margin: 0;
-      max-width: fit-content;
-    }
-    &--free,
-    &--ultimate,
-    &--pro {
-      margin: 0;
-      max-width: fit-content;
-      margin-top: 20px;
-    }
-  }
-  @media (min-width: 64.6875rem) {
-    &--free,
-    &--ultimate,
-    &--pro {
-      margin: auto;
-    }
+  &--signup {
+    background-color: $primary-blue;
+    text-align: center;
+    // margin-top: 2.5rem;
   }
 }

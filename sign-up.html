@@ -1,36 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="./js/script.js"></script>
+    <title>Officelite coming soon site</title>
+  </head>
+  <body>
+    <main class="signup">
+      <div class="signup__container">
+        <div class="signup__logo">
+          <img src="./assets/shared/logo.svg" alt="Logo" />
+        </div>
+        <div class="signup__contents">
+          <h2 class="signup__heading">Work smarter. Save time.</h2>
+          <p class="signup__paragraph">
+            Easily manage your projects. Get on the list and receive in-app
+            perks available only to early subscribers. We are moving into final
+            development and getting ready for official launch soon.
+          </p>
+        </div>
+      </div>
+      <div class="signup__timer">
+        <p class="signup__when">coming <span>7 july 2022</span></p>
+        <div class="signup__countdown">
+          <div class="signup__time">
+            <h3 class="signup__numbers">47</h3>
+            <p class="signup__text">days</p>
+          </div>
+          <div class="signup__time">
+            <h3 class="signup__numbers">07</h3>
+            <p class="signup__text">hours</p>
+          </div>
+          <div class="signup__time">
+            <h3 class="signup__numbers">56</h3>
+            <p class="signup__text">mins</p>
+          </div>
+          <div class="signup__time">
+            <h3 class="signup__numbers">14</h3>
+            <p class="signup__text">sec</p>
+          </div>
+        </div>
+      </div>
+      <div class="signup__form">
+        <form>
+          <div class="signup__inputs">
+            <label for="name">
+              <input type="text" id="name" placeholder="Name" />
+              <img src="./assets/sign-up/icon-cross.svg" alt="X" />
+            </label>
+          </div>
+          <div class="signup__inputs">
+            <label for="email">
+              <input type="email" id="email" placeholder="Email Address" />
+              <img src="./assets/sign-up/icon-cross.svg" alt="X" />
+            </label>
+          </div>
+          <div class="signup__select">
+            <p class="signup__plan">basic pack <span>free</span></p>
+            <img src="./assets/sign-up/icon-arrow-down.svg" alt="" />
+            <ul class="signup__list">
+              <li class="signup__item">basic pack <span>free</span></li>
+              <li class="signup__item">pro pack <span>$9.99</span></li>
+              <li class="signup__item">ultimate <span>$19.99</span></li>
+            </ul>
+          </div>
+          <div class="signup__inputs">
+            <label for="phone">
+              <input type="numeric" id="phone" placeholder="Phone Number" />
+              <img src="./assets/sign-up/icon-cross.svg" alt="X" />
+            </label>
+          </div>
+          <div class="signup__inputs">
+            <label for="company">
+              <input type="text" id="company" placeholder="Company" />
+              <img src="./assets/sign-up/icon-cross.svg" alt="X" />
+            </label>
+          </div>
+          <a href="" class="btn btn--signup">get on the list</a>
+        </form>
+      </div>
+      <div class="signup__bg"></div>
+    </main>
+    <!-- Work smarter. Save time. Easily manage your projects. Get on the list and
+    receive in-app perks available only to early subscribers. We are moving into
+    final development and getting ready for official launch soon. -->
 
-    <title>Frontend Mentor | Officelite coming soon site</title>
-</head>
-<body>
-  Work smarter. Save time.
+    <!-- If you're choosing to make this date dynamic, set it to 30 days in the future from the moment the visitor views the page -->
+    <!-- Coming 4 Nov 2020 -->
 
-  Easily manage your projects. Get on the list and receive in-app perks available only to 
-  early subscribers. We are moving into final development and getting ready for official launch soon.
-
-  <!-- If you're choosing to make this date dynamic, set it to 30 days in the future from the moment the visitor views the page -->
-  Coming 4 Nov 2020
-
-  <!-- If you're choosing to make this timer dynamic, have it countdown from the date you set above -->
-  47 Days
-  07 Hours
-  56 Min
-  14 Sec
-
-  Name
-  Email Address
-  Basic Pack Free
-  Basic Pack Free
-  Pro Pack $9.99
-  Ultimate Pack $19.99
-  Phone Number
-  Company
-  Get on the list
-</body>
+    <!-- If you're choosing to make this timer dynamic, have it countdown from the date you set above -->
+    <!-- 47 Days 07 Hours 56 Min 14 Sec Name Email Address Basic Pack Free Basic Pack
+    Free Pro Pack $9.99 Ultimate Pack $19.99 Phone Number Company Get on the
+    list -->
+  </body>
 </html>
