@@ -15,6 +15,7 @@
       padding: 60px $tablet-side-padding;
       grid-template-columns: repeat(8, 1fr);
       row-gap: 70px;
+      background-image: none;
     }
     @include breakPoint(80.4375rem) {
       //1287px
@@ -209,10 +210,11 @@
 .signup {
   display: grid;
   align-items: center;
-  @include breakPoint(1440px) {
+  @include breakPoint(64.6875rem) {
     grid-template-columns: repeat(8, 1fr);
-    align-items: start;
+    grid-template-rows: repeat(2, 1fr);
     column-gap: 20px;
+    align-items: stretch;
   }
 
   // HEADER
@@ -233,7 +235,7 @@
       padding-left: $desktop-side-padding;
       padding-right: $desktop-side-padding;
     }
-    @include breakPoint(1440px) {
+    @include breakPoint(64.6875rem) {
       grid-column: 1 / 6;
       grid-row: 1 / 2;
     }
@@ -256,7 +258,7 @@
       max-width: 35rem;
       margin: auto;
     }
-    @include breakPoint(1440px) {
+    @include breakPoint(64.6875rem) {
       margin: 0;
       padding: 0;
     }
@@ -270,12 +272,16 @@
     row-gap: 10px;
     grid-column: 1 / -1;
     grid-row: 2 / 3;
-    @include breakPoint(1440px) {
-      margin-inline: $desktop-side-padding;
+    @include breakPoint(64.6875rem) {
+      margin-inline: $tablet-side-padding;
       text-align: left;
       grid-column: 1 / 6;
       grid-row: 2 / 3;
       align-self: start;
+      justify-self: start;
+    }
+    @include breakPoint(80.4375rem) {
+      margin-inline: $desktop-side-padding;
     }
   }
 
@@ -283,8 +289,7 @@
     display: flex;
     margin: auto;
     gap: 10px;
-    padding: 0 $mobile-side-padding;
-    @include breakPoint(1440px) {
+    @include breakPoint(80.4375rem) {
       margin: 0;
       justify-items: start;
       padding: 0;
@@ -316,9 +321,9 @@
     @include breakPoint($breakpoint-tablet) {
       margin-inline: $desktop-side-padding;
     }
-    @include breakPoint(1440px) {
+    @include breakPoint(64.6875rem) {
       grid-column: 5 / 8;
-      grid-row: 1 / -1;
+      grid-row: 1/2;
       margin-inline: 0;
       max-width: 445px;
       align-self: center;
@@ -392,14 +397,11 @@
   &__bg {
     min-height: 320px;
     background-color: $primary-dark;
-    @include breakPoint(1440px) {
-      position: absolute;
-      width: 420px;
-      max-width: 420px;
-      height: 100%;
-      right: 0;
-      top: 0;
-      z-index: -1;
+    background-image: url("../assets/sign-up/bg-pattern-side.svg");
+    background-position: center;
+    @include breakPoint(64.6875rem) {
+      grid-column: 7 / 9;
+      grid-row: 1/3;
     }
   }
 }
