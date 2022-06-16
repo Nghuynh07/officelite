@@ -42,6 +42,12 @@ Users should be able to:
 
 ## My process
 
+- As always, I started out by installing necessary dependencies (SASS). SASS has been part of my workflow for sometimes now and I can't imagine without it. It makes writing styling so much better.
+- Next I set up the folder structures for SASS, JS and CSS and link JS and CSS modules onto HTML head.
+- Next is styling and layout. I used grid for this project and a little be of flexbox where it most makes sense.
+- Lastly is getting the form validations to work and the timer. Both of these weren't hard to figure out; however, there were definitely trials and errors and understand the flow of the logic.
+- However, there is one thing I wanted to do but it didn't work out which was getting the timer to saved into localStorage. Right now if a user refreshes the page, it'll go back to the beginning.
+
 ### Built with
 
 - Semantic HTML5 markup

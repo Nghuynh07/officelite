@@ -92,7 +92,7 @@ const officialDate = () => {
       year: "numeric",
     }
   );
-  console.log(date);
+
   document.querySelectorAll(".official__date").forEach((d) => {
     d.textContent = date;
   });
@@ -121,6 +121,7 @@ const displayCountDown = () => {
   const getSeconds = document.querySelectorAll(".seconds");
 
   const countDown = setInterval(() => {
+    localStorage.setItem("seconds", seconds);
     seconds--;
     getStats(getDays, days);
     getStats(getHours, hours);
@@ -130,16 +131,19 @@ const displayCountDown = () => {
     if (seconds === 0) {
       seconds = 60;
       minutes--;
+      localStorage.setItem("minutes", minutes);
     }
 
     if (minutes === 0) {
       minutes = 59;
       hours--;
+      localStorage.setItem("hours", hours);
     }
 
     if (hours === 0) {
       hours = 23;
       days--;
+      localStorage.setItem("days", days);
     }
   }, 1000);
 
@@ -150,11 +154,6 @@ const displayCountDown = () => {
     minutes = 00;
     seconds = 00;
   }
-
-  localStorage.setItem("days", days);
-  localStorage.setItem("hours", hours);
-  localStorage.setItem("minutes", minutes);
-  localStorage.setItem("seconds", seconds);
 };
 
 displayCountDown();
