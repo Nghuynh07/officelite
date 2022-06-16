@@ -33,6 +33,13 @@
   }
 }
 
+.signup__plan {
+  @include font($reg-font, $primary-dark, 600);
+  span {
+    color: $primary-gray;
+  }
+}
+
 //TEXT
 .header__text {
   @include font($reg-font, $primary-gray, none);

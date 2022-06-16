@@ -33,19 +33,19 @@
         <p class="signup__when">coming <span>7 july 2022</span></p>
         <div class="signup__countdown">
           <div class="signup__time">
-            <h3 class="signup__numbers">47</h3>
+            <h3 class="signup__numbers days">47</h3>
             <p class="signup__text">days</p>
           </div>
           <div class="signup__time">
-            <h3 class="signup__numbers">07</h3>
+            <h3 class="signup__numbers hours">07</h3>
             <p class="signup__text">hours</p>
           </div>
           <div class="signup__time">
-            <h3 class="signup__numbers">56</h3>
+            <h3 class="signup__numbers minutes">56</h3>
             <p class="signup__text">mins</p>
           </div>
           <div class="signup__time">
-            <h3 class="signup__numbers">14</h3>
+            <h3 class="signup__numbers seconds">14</h3>
             <p class="signup__text">sec</p>
           </div>
         </div>
@@ -54,38 +54,92 @@
         <form>
           <div class="signup__inputs">
             <label for="name">
-              <input type="text" id="name" placeholder="Name" />
+              <input
+                type="text"
+                id="name"
+                placeholder="Name"
+                autocomplete="off"
+                autofocus
+                class="name"
+                name="name"
+                required
+              />
               <img src="./assets/sign-up/icon-cross.svg" alt="X" />
             </label>
           </div>
           <div class="signup__inputs">
             <label for="email">
-              <input type="email" id="email" placeholder="Email Address" />
+              <input
+                type="email"
+                inputmode="email"
+                id="email"
+                placeholder="Email Address"
+                autocomplete="off"
+                class="email"
+                name="email"
+                required
+              />
               <img src="./assets/sign-up/icon-cross.svg" alt="X" />
             </label>
           </div>
           <div class="signup__select">
-            <p class="signup__plan">basic pack <span>free</span></p>
-            <img src="./assets/sign-up/icon-arrow-down.svg" alt="" />
+            <p class="signup__plan">
+              basic pack <span class="currentPlan">free</span>
+            </p>
+            <img
+              class="arrow"
+              src="./assets/sign-up/icon-arrow-down.svg"
+              alt="Arrow Icon"
+            />
             <ul class="signup__list">
-              <li class="signup__item">basic pack <span>free</span></li>
-              <li class="signup__item">pro pack <span>$9.99</span></li>
-              <li class="signup__item">ultimate <span>$19.99</span></li>
+              <li class="signup__item">
+                <span class="plan"
+                  >basic pack <span class="fee">free</span></span
+                >
+                <img src="./assets/sign-up/icon-check.svg" alt="Check Icon" />
+              </li>
+              <li class="signup__item">
+                <span class="plan"
+                  >pro pack <span class="fee">$9.99</span></span
+                >
+                <img src="./assets/sign-up/icon-check.svg" alt="Check Icon" />
+              </li>
+              <li class="signup__item">
+                <span class="plan"
+                  >ultimate <span class="fee">$19.99</span></span
+                >
+                <img src="./assets/sign-up/icon-check.svg" alt="Check Icon" />
+              </li>
             </ul>
           </div>
           <div class="signup__inputs">
             <label for="phone">
-              <input type="numeric" id="phone" placeholder="Phone Number" />
+              <input
+                inputmode="tel"
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                class="phone"
+                name="phone"
+                required
+              />
               <img src="./assets/sign-up/icon-cross.svg" alt="X" />
             </label>
           </div>
           <div class="signup__inputs">
             <label for="company">
-              <input type="text" id="company" placeholder="Company" />
+              <input
+                type="text"
+                id="company"
+                placeholder="Company"
+                class="company"
+                name="company "
+                required
+              />
               <img src="./assets/sign-up/icon-cross.svg" alt="X" />
             </label>
           </div>
-          <a href="" class="btn btn--signup">get on the list</a>
+          <button type="submit" class="btn btn--signup">get on the list</button>
         </form>
       </div>
       <div class="signup__bg"></div>

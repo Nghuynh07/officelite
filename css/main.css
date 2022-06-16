@@ -377,13 +377,14 @@
   font-weight: none;
   letter-spacing: 1px;
 }
+.signup__form label img {
+  pointer-events: none;
+  opacity: 0;
+}
 .signup__inputs {
   border-bottom: 1px solid rgba(151, 151, 151, 0.3);
 }
 .signup__select {
-  font-size: var(--16px);
-  color: var(--primary-dark);
-  font-weight: bold;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -394,13 +395,11 @@
   cursor: pointer;
   word-spacing: 4px;
 }
-.signup__select span {
-  font-size: var(--16px);
-  color: var(--primary-gray);
-  font-weight: bold;
-}
 .signup__select img {
   pointer-events: none;
+}
+.signup__plan {
+  cursor: pointer;
 }
 .signup__list {
   position: absolute;
@@ -410,13 +409,41 @@
   padding: 10px;
   background-color: #fff;
   border-radius: 15px;
-  display: none;
   row-gap: 10px;
+  display: grid;
+  transform: translateY(-10%);
+  visibility: hidden;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
 }
 .signup__item {
   width: 100%;
   padding: 10px 0 20px 15px;
   border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  isolation: isolate;
+  cursor: pointer;
+}
+.signup__item span {
+  pointer-events: none;
+}
+.signup__item .plan {
+  font-size: var(--16px);
+  color: var(--primary-dark);
+  font-weight: bold;
+}
+.signup__item .fee {
+  font-size: var(--16px);
+  color: var(--primary-gray);
+  font-weight: bold;
+}
+.signup__item img {
+  opacity: 0;
+}
+.signup__item:hover {
+  transform: scale(1.05);
 }
 .signup__bg {
   min-height: 320px;
@@ -508,6 +535,15 @@ body {
   .signup__heading {
     text-align: left;
   }
+}
+
+.signup__plan {
+  font-size: var(--16px);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+.signup__plan span {
+  color: var(--primary-gray);
 }
 
 .header__text {
@@ -694,6 +730,23 @@ body {
 .btn--signup {
   background-color: var(--primary-blue);
   text-align: center;
+  cursor: pointer;
+}
+
+.toggle__list {
+  transform: translateY(0);
+  visibility: visible;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.arrow__rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+  transition-delay: 25ms;
+}
+
+.active {
+  color: green;
 }
 
 /*# sourceMappingURL=main.css.map */
