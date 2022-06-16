@@ -12,6 +12,10 @@
     box-shadow: 0 8px 25px rgba($primary-blue / 0.4);
     background-color: $primary-blue;
     margin: auto;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: $secondary-blue;
+    }
     @include breakPoint($breakpoint-tablet) {
       margin: 0;
       max-width: fit-content;
@@ -50,6 +54,7 @@
   &--timer {
     background-color: $primary-blue;
     margin: auto;
+
     @include breakPoint(64.6875rem) {
       margin: 0;
       justify-self: end;

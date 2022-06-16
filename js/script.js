@@ -13,7 +13,7 @@ const toggling = (e) => {
   }
 };
 
-form.addEventListener("click", toggling);
+form && form.addEventListener("click", toggling);
 
 const activeItem = (e) => {
   const items = document.querySelectorAll(".signup__item");
@@ -30,8 +30,7 @@ const activeItem = (e) => {
 
   plan.textContent = currentPlan.textContent;
 };
-
-list.addEventListener("click", activeItem);
+list && list.addEventListener("click", activeItem);
 
 // FORM VALIDATIONS
 const textValidations = (input) => {
@@ -64,38 +63,70 @@ const emailInput = document.querySelector(".email");
 const companyInput = document.querySelector(".company");
 const phoneInput = document.querySelector(".phone");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  textValidations(nameInput);
-  emailValidation(emailInput);
-  textValidations(companyInput);
-  // numberValidation(phoneInput);
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    textValidations(nameInput);
+    emailValidation(emailInput);
+    textValidations(companyInput);
+    // numberValidation(phoneInput);
 
-  nameInput.value = "";
-  emailInput.value = "";
-  companyInput.value = "";
-  phoneInput.value = "";
-});
+    nameInput.value = "";
+    emailInput.value = "";
+    companyInput.value = "";
+    phoneInput.value = "";
+  });
+}
 
 // COUNT DOWN
 
-const displayCountDown = () => {
-  let days = 29;
-  let hours = 23;
-  let minutes = 59;
-  let seconds = 60;
+//1 day = 1000 * 60 * 60 * 24 = 86,400,000 milliseconds
+// 86,400,000 milliseconds * 30 = 2,592,000,000
 
-  const getDays = document.querySelector(".days");
-  const getHours = document.querySelector(".hours");
-  const getMinutes = document.querySelector(".minutes");
-  const getSeconds = document.querySelector(".seconds");
+const officialDate = () => {
+  const date = new Date(Date.now() + 1000 * 60 * 60 * 24 * 30).toLocaleString(
+    "en-us",
+    {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    }
+  );
+  console.log(date);
+  document.querySelectorAll(".official__date").forEach((d) => {
+    d.textContent = date;
+  });
+};
+
+officialDate();
+
+const getStats = (array, time) => {
+  array.forEach((a) => {
+    a.textContent = time;
+  });
+};
+let time = {
+  days: 29,
+  hours: 23,
+  minutes: 59,
+  seconds: 60,
+};
+
+let { days, hours, minutes, seconds } = time;
+
+const displayCountDown = () => {
+  const getDays = document.querySelectorAll(".days");
+  const getHours = document.querySelectorAll(".hours");
+  const getMinutes = document.querySelectorAll(".minutes");
+  const getSeconds = document.querySelectorAll(".seconds");
 
   const countDown = setInterval(() => {
     seconds--;
-    getDays.textContent = days;
-    getHours.textContent = hours;
-    getMinutes.textContent = minutes;
-    getSeconds.textContent = seconds;
+    getStats(getDays, days);
+    getStats(getHours, hours);
+    getStats(getMinutes, minutes);
+    getStats(getSeconds, seconds);
+
     if (seconds === 0) {
       seconds = 60;
       minutes--;
@@ -119,6 +150,11 @@ const displayCountDown = () => {
     minutes = 00;
     seconds = 00;
   }
+
+  localStorage.setItem("days", days);
+  localStorage.setItem("hours", hours);
+  localStorage.setItem("minutes", minutes);
+  localStorage.setItem("seconds", seconds);
 };
 
 displayCountDown();

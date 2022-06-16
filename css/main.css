@@ -675,6 +675,10 @@ body {
   box-shadow: 0 8px 25px rgba(var(--primary-blue)/0.4);
   background-color: var(--primary-blue);
   margin: auto;
+  transition: background-color 0.3s;
+}
+.btn--header:hover {
+  background-color: var(--secondary-blue);
 }
 @media (min-width: 48rem) {
   .btn--header {
