@@ -317,7 +317,7 @@
     transform: translateY(50%);
     background-color: $white;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0 0 0 / 0.05);
+    filter: drop-shadow(0 0 20px rgba(0 0 0 / 0.05));
     @include breakPoint($breakpoint-tablet) {
       margin-inline: $desktop-side-padding;
     }

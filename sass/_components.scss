@@ -9,16 +9,20 @@
   border-radius: 5rem;
 
   &--header {
-    box-shadow: 0 8px 25px rgba($primary-blue / 0.4);
+    filter: drop-shadow(0 7px 7px rgba(0 0 0 / 0.3));
     background-color: $primary-blue;
     margin: auto;
-    transition: background-color 0.3s;
-    &:hover {
-      background-color: $secondary-blue;
-    }
     @include breakPoint($breakpoint-tablet) {
       margin: 0;
       max-width: fit-content;
+    }
+    @include breakPoint(90rem) {
+      @media (prefers-reduced-motion: no-preference) {
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: $secondary-blue;
+        }
+      }
     }
   }
 
@@ -35,6 +39,15 @@
     @include breakPoint(64.6875rem) {
       margin: auto;
     }
+
+    @include breakPoint(90rem) {
+      @media (prefers-reduced-motion: no-preference) {
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: rgba(#5175ff, 0.25);
+        }
+      }
+    }
   }
 
   &--pro {
@@ -49,6 +62,15 @@
     @include breakPoint(64.6875rem) {
       margin: auto;
     }
+
+    @include breakPoint(90rem) {
+      @media (prefers-reduced-motion: no-preference) {
+        transition: opacity 0.3s;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
   }
 
   &--timer {
@@ -60,10 +82,26 @@
       justify-self: end;
       align-self: start;
     }
+    @include breakPoint(90rem) {
+      @media (prefers-reduced-motion: no-preference) {
+        transition: opacity 0.3s;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
   }
   &--signup {
     background-color: $primary-blue;
     text-align: center;
     cursor: pointer;
+    @include breakPoint(90rem) {
+      @media (prefers-reduced-motion: no-preference) {
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: $secondary-blue;
+        }
+      }
+    }
   }
 }

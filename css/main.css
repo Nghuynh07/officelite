@@ -334,7 +334,7 @@
   transform: translateY(50%);
   background-color: #fafafa;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.05));
 }
 @media (min-width: 48rem) {
   .signup__form {
@@ -672,18 +672,22 @@ body {
   border-radius: 5rem;
 }
 .btn--header {
-  box-shadow: 0 8px 25px rgba(var(--primary-blue)/0.4);
+  filter: drop-shadow(0 7px 7px rgba(0, 0, 0, 0.3));
   background-color: var(--primary-blue);
   margin: auto;
-  transition: background-color 0.3s;
-}
-.btn--header:hover {
-  background-color: var(--secondary-blue);
 }
 @media (min-width: 48rem) {
   .btn--header {
     margin: 0;
     max-width: fit-content;
+  }
+}
+@media (min-width: 90rem) and (prefers-reduced-motion: no-preference) {
+  .btn--header {
+    transition: background-color 0.3s;
+  }
+  .btn--header:hover {
+    background-color: var(--secondary-blue);
   }
 }
 .btn--free, .btn--ultimate {
@@ -703,6 +707,14 @@ body {
     margin: auto;
   }
 }
+@media (min-width: 90rem) and (prefers-reduced-motion: no-preference) {
+  .btn--free, .btn--ultimate {
+    transition: background-color 0.3s;
+  }
+  .btn--free:hover, .btn--ultimate:hover {
+    background-color: rgba(81, 117, 255, 0.25);
+  }
+}
 .btn--pro {
   background-color: #fafafa;
   color: var(--primary-blue);
@@ -720,6 +732,14 @@ body {
     margin: auto;
   }
 }
+@media (min-width: 90rem) and (prefers-reduced-motion: no-preference) {
+  .btn--pro {
+    transition: opacity 0.3s;
+  }
+  .btn--pro:hover {
+    opacity: 0.8;
+  }
+}
 .btn--timer {
   background-color: var(--primary-blue);
   margin: auto;
@@ -731,10 +751,26 @@ body {
     align-self: start;
   }
 }
+@media (min-width: 90rem) and (prefers-reduced-motion: no-preference) {
+  .btn--timer {
+    transition: opacity 0.3s;
+  }
+  .btn--timer:hover {
+    opacity: 0.9;
+  }
+}
 .btn--signup {
   background-color: var(--primary-blue);
   text-align: center;
   cursor: pointer;
+}
+@media (min-width: 90rem) and (prefers-reduced-motion: no-preference) {
+  .btn--signup {
+    transition: background-color 0.3s;
+  }
+  .btn--signup:hover {
+    background-color: var(--secondary-blue);
+  }
 }
 
 .toggle__list {
